@@ -1,11 +1,12 @@
 import axios from "axios";
 import { LoginData } from "./Interfaces/LoginData";
 import { ResponseFunction } from "../ResponseFunction";
+import { appServer, appClient } from "../../api";
 
 function Login(usuario: LoginData): Promise<ResponseFunction>{
-    return axios.post("http://localhost:5555/AuthUser", usuario)
+    return axios.post(`${appServer}/AuthUser`, usuario)
         .then((res) => {
-            window.location.href = "http://localhost:5173/estoque";
+            window.location.href = `${appClient}/estoque`;
             return {
                 success: true,
                 data: res.data

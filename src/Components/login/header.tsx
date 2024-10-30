@@ -1,9 +1,10 @@
 import "./header.css"
+import { appClient } from "../../api";
 function Header(){
 
     return (
         <div className="header">
-        <a href="http://localhost:5173/" className="nav-link">Home</a>
+        <a href={appClient} className="nav-link">Home</a>
     </div>
 
     )

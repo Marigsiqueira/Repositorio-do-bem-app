@@ -2,6 +2,7 @@ import './navebar.css'
 import { useState, useEffect } from 'react'
 import ModalUserInfo from './modalUserInfo';
 import GetUserStatus from '../../../Functions/UserFunctions/GetStatus';
+import { appClient } from '../../../api';
 
 export default function Navebar() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -23,7 +24,7 @@ export default function Navebar() {
       <div className="estoque-header">
         
           <div className="estoque-header-esquerda">
-          <p className='estoque-header-esquerda-texto' onClick={() => window.location.href = 'http://localhost:5173/home'}>Home</p>
+          <p className='estoque-header-esquerda-texto' onClick={() => window.location.href = `${appClient}/home`}>Home</p>
           </div>
 
           <div className="estoque-header-direita">

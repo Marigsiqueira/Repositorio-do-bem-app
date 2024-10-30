@@ -1,11 +1,12 @@
 import axios from "axios";
 import { UsuarioData } from "./Interfaces/UsuarioData";
 import { ResponseFunction } from "../ResponseFunction";
+import { appServer, appClient } from "../../api";
 
 function cadastroUser(data: UsuarioData): Promise<ResponseFunction> {
-    return axios.post("http://localhost:5555/saveUsuario", data)
+    return axios.post(`${appServer}/saveUsuario`, data)
         .then((res) => {
-            window.location.href = "http://localhost:5173/login"
+            window.location.href = `${appClient}/login`;
             return {
                 success: true,
                 data: res.data

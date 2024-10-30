@@ -5,6 +5,7 @@ import { UsuarioData } from '../../../Functions/UserFunctions/Interfaces/Usuario
 import GetUserStatus from '../../../Functions/UserFunctions/GetStatus';
 import EditUser from '../../../Functions/UserFunctions/EditUser';
 import DeleteUser from '../../../Functions/UserFunctions/DeleteUser'; 
+import { appClient } from '../../../api';
 
 interface ModalUserInfoProps {
   isOpen: boolean;
@@ -73,13 +74,13 @@ const ModalUserInfo: FC<ModalUserInfoProps> = ({ isOpen, setOpen, name, cnpj }) 
   }
 
   function handleDeleteUser() {
-    window.location.href = 'http://localhost:5173/login'
+    window.location.href = `${appClient}/login`;
     if (user && user.usuarioId) {
       DeleteUser(user.usuarioId)
         .then((response) => {
           if (response) {
             alert("Usuário deletado com sucesso!");
-            window.location.href = 'http://localhost:5555/'
+            window.location.href = `${appClient}`
             setDeleteOpen(false);
             setOpen(false);
           }

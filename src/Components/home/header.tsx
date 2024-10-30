@@ -1,8 +1,9 @@
 import './header.css';
+import { appClient } from '../../api';
 
 export default function Header() {
   const handleButtonClick = () => {
-    window.location.href = 'http://localhost:5173/login'; // Redireciona para a página de login
+    window.location.href = `${appClient}/login`;
   };
   return (
     <>
