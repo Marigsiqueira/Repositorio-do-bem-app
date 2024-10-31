@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.quem-somos {
+    width: 100%;
+    background-color:   rgba(13, 39, 131, 1);
+    display: grid;
+    position: relative;
+    margin-bottom: 130px;
+}
+
+.quem-somos-titulo {
+    color: #F3B823;
+    margin-left: 150px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 20px;
+    grid-column: 1;
+    margin-right:200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.quem-somos-texto {
+    font-family: 'Poppins';
+    font-weight: 400;
+    grid-column: 2;
+    font-size: 20px;
+    margin-right: 130px;
+    align-items: center;
+    justify-content: center;
+}
+
+.quem-somos-texto p{
+    color:#ffffff;
+    text-align: justify;
+}
+
+.quem-somos-titulo p{
+    color:#F3B823;
+    text-align: justify;
+}
+
+.quem-somos-titulo img{
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.quem-somos-titulo img:hover{
+    transform: scale(1.10);
+}
+
+.quem-somos-titulo img {
+    transition: transform 0.3s ease; 
+}

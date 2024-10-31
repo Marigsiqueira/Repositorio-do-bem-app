@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.modal {
+    position: fixed;
+    right: 1%;
+    top: 10%;
+    width: 230px;
+    max-width: 90%;
+    background-color: #F3B823;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    z-index: 10;
+    font-family: "Poppins", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    padding-left: 0.1rem;
+    transition: 0.8s;
+    font-size: 15px;
+}
+
+.descricao{
+    margin-right: 0.5rem;
+    text-align: center;
+    display: flex;      
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.descricao p {
+    margin-bottom: 1rem;
+    color:  white;
+    font-weight: bold; 
+}
+
+.descricao p+p {
+    margin-bottom: 1rem;
+    color:  white;
+    font-weight: bold; 
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.close-button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.modal button{
+    background-color: white;
+    color:  #F3B823;
+    width: 200px;
+    height: 42px;
+    margin-bottom: 1rem;
+    margin-left: 10%;
+    transition: all 0.1s ease;
+    letter-spacing: 0.2px;
+    font-weight: bold;    
+    border-radius: 30px; 
+}
+
+.modal button:focus {
+    border: none; 
+    border: 1px solid #F3B823;
+    outline: none;
+}
+
+.modal button:hover{
+    border: 1px solid #F3B823;
+}
+
+

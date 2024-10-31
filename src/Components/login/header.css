@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: #0D2783;
+    width:100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Garante que o header ocupe toda a largura da página */
+    z-index: 1000;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #F3B823;
+}
+
+
+
+.nav-link {
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #F3B823;
+}
+
+.nav-link:hover {
+    color: #0D2783;
+}
