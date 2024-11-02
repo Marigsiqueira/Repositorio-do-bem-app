@@ -57,3 +57,18 @@
 .botoes-estoque-direita:focus {
     outline: none;
 }
+
+#check-list{
+    max-height: 100px; 
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+#check-list div{
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    margin-bottom: 4px;
+}
