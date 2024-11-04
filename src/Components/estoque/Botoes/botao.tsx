@@ -16,7 +16,7 @@ function Botao() {
   
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isDoacaoModalOpen, setIsDoacaoModalOpen] = useState(false);
-  const [selectedAlimento, setSelectedAlimento] = useState<string>(''); 
+  const [selectedAlimentos, setSelectedAlimentos] = useState<string[]>([]); 
 
   const openAddModal = () => setIsAddModalOpen(true);
   const closeAddModal = () => setIsAddModalOpen(false);
@@ -50,14 +50,24 @@ function Botao() {
   }
 
   async function handleFazerDoacao() {
-    if (selectedAlimento) {
-      await debitarAlimento(selectedAlimento, setAlimentos);
+    if (selectedAlimentos.length > 0) {
+      for (const alimentoId of selectedAlimentos) {
+        await debitarAlimento(alimentoId, setAlimentos);
+      }
       closeDoacaoModal(); 
-      window.location.reload()
+      window.location.reload();
     } else {
-      alert('Selecione um alimento para doar.');
+      alert('Selecione pelo menos um alimento para doar.');
     }
   }
+
+  const handleSelectAlimento = (alimentoId: string) => {
+    setSelectedAlimentos(prevSelected => 
+      prevSelected.includes(alimentoId)
+        ? prevSelected.filter(id => id !== alimentoId)
+        : [...prevSelected, alimentoId] 
+    );
+  };
 
   return (
     <>
@@ -96,14 +106,21 @@ function Botao() {
 
 
       <ModalProps2 isOpen={isDoacaoModalOpen} setOpen={setIsDoacaoModalOpen} title="Fazer Doação">
-        <select value={selectedAlimento} onChange={(e) => setSelectedAlimento(e.target.value)}>
-          <option value="">Selecione os alimentos para doar</option>
+        <label>Selecione os alimentos para doar:</label>
+        <br />
+        <div id='check-list'>
           {alimentos.map((alimento) => (
-            <option key={alimento.alimentoId} value={alimento.alimentoId}>
+            <div key={alimento.alimentoId}>
+              <input
+                type="checkbox"
+                value={alimento.alimentoId}
+                checked={selectedAlimentos.includes(alimento.alimentoId!)}
+                onChange={() => handleSelectAlimento(alimento.alimentoId!)}
+              />
               {alimento.nome} - {alimento.peso}
-            </option>
+            </div>
           ))}
-        </select>
+        </div>
         <br />
         <button onClick={handleFazerDoacao}>Confirmar Doação</button>
         <button onClick={closeDoacaoModal}>Cancelar</button>
