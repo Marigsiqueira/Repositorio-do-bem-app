@@ -24,7 +24,7 @@ function StockTable() {
     }, []);
 
 
-    function ChangeAliment(alimentoId: string) {
+    function ChangeAliment(alimentoId?: string) {
         const alimentoEncontrado = alimentos.find(a => a.alimentoId === alimentoId);
         if (alimentoEncontrado) {
             setAlimento(alimentoEncontrado);
@@ -35,7 +35,7 @@ function StockTable() {
         setEditOpen(true);
     }
 
-    function DelAlimento(alimentoId: string) {
+    function DelAlimento(alimentoId?: string) {
         const alimentoEncontrado = alimentos.find(a => a.alimentoId === alimentoId);
         if (alimentoEncontrado) {
             DeleteAlimento(alimentoEncontrado.alimentoId)
