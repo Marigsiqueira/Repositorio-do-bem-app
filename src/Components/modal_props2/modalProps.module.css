@@ -118,10 +118,9 @@
     font-family: 'Poppins';
 }
 
-.content> select{
+.content{
     background-color: #ffffff;
     border-radius: 30px;
-    border-style: solid;
     padding: 5px;
     width: 90%;
     color: #000;
@@ -130,3 +129,4 @@
     padding-left: 10px;
     font-family: 'Poppins';
 }
+

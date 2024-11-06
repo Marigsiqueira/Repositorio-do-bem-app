@@ -6,6 +6,11 @@
 
 }
 
+.inputEdson{
+    color: black;
+    accent-color: black;
+}
+
 
 .botoes-estoque-container-direita{
     margin-left: 350px;
@@ -64,6 +69,8 @@
     border: 1px solid #ccc;
     padding: 8px;
     margin-top: 8px;
+    background-color: white;
+    color: black;
 }
 
 #check-list div{
